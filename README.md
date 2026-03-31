@@ -98,3 +98,7 @@ The application will be available at `http://localhost:8080`.
 - `404 Not Found`: Wallet not found.
 - `400 Bad Request`: Insufficient funds or invalid data format.
 - `500 Internal Server Error`: Internal server error.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
