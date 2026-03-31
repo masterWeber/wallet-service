@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20260331_125700_enable_uuid_extension
+      author: masterweber
+      changes:
+        - sql:
+            sql: CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+  - changeSet:
+      id: 20260331_125701_create_wallets_table
+      author: masterweber
+      changes:
+        - createTable:
+            tableName: wallets
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  defaultValue: uuid_generate_v4()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: balance
+                  type: BIGINT
+                  constraints:
+                    nullable: false
