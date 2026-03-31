@@ -1,5 +1,6 @@
 package com.github.masterweber.walletservice.domain.wallet.model.response;
 
+import com.github.masterweber.walletservice.domain.wallet.model.OperationStatus;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,6 +15,6 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class OperationResponse {
 
-    String status;
+    OperationStatus status;
 
 }

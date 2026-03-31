@@ -2,6 +2,7 @@ package com.github.masterweber.walletservice.domain.wallet.controller;
 
 import com.github.masterweber.walletservice.domain.wallet.entity.Wallet;
 import com.github.masterweber.walletservice.domain.wallet.mapper.WalletMapper;
+import com.github.masterweber.walletservice.domain.wallet.model.OperationStatus;
 import com.github.masterweber.walletservice.domain.wallet.model.request.WalletCreateRequest;
 import com.github.masterweber.walletservice.domain.wallet.model.request.WalletOperationRequest;
 import com.github.masterweber.walletservice.domain.wallet.model.response.OperationResponse;
@@ -29,7 +30,7 @@ public class WalletController {
     @PostMapping("/wallet")
     public ResponseEntity<OperationResponse> processOperation(@Valid @RequestBody WalletOperationRequest request) {
         walletService.processOperation(request);
-        return ResponseEntity.ok(new OperationResponse("success"));
+        return ResponseEntity.ok(new OperationResponse(OperationStatus.SUCCESS));
     }
 
     @PostMapping("/wallets")
